@@ -6,7 +6,9 @@ const connection=require('./Utils/connection');
 const clearFileService=require('./Service/clearFileService')
 const cron = require('node-cron');
 const app=express();
-app.use(cors());
+const url=require('./Config/config').Frontend_Base_Url;
+
+app.use(cors({origin:url}));
 app.listen(PORT,()=>{
     connection();
     console.log("connected to PORT ",`${PORT}`);

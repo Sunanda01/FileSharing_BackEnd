@@ -1,5 +1,5 @@
 const documentmodels=require('../Model/documentModel');
-const url=require('../Config/config').url;
+const url=require('../Config/config').Backend_Base_Url;
 const docController= {
 
  async fileController(req,res){
@@ -11,7 +11,7 @@ const docController= {
    }
    try{
       const document_Model=await documentmodels.create(fileObj);
-      console.log(document_Model);
+      // console.log(document_Model);
       return res.status(200).json({path:`${url}${document_Model._id}`});
    }catch(err){
       console.error(err.message);
