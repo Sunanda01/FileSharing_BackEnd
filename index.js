@@ -8,7 +8,7 @@ const cron = require('node-cron');
 const app=express();
 const url=require('./Config/config').Frontend_Base_Url;
 
-app.use(cors({origin:url}));
+app.use(cors());
 app.listen(PORT,()=>{
     connection();
     console.log("connected to PORT ",`${PORT}`);
